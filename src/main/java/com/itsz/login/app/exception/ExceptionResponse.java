@@ -7,9 +7,9 @@ import java.time.LocalDateTime;
 @Data
 public class ExceptionResponse {
 
-    private int errorCode;
-    private Object errorMessage;
+    private int status;
+    private String error;
+    private String path;
     private LocalDateTime timestamp;
-
 
 }

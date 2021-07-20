@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
 import javax.validation.ValidationException;
@@ -31,7 +32,7 @@ public class UserRegisterController {
     ResponseEntity<Void> registerUser(@RequestBody @Valid UserRegisterRequestDto userRegisterDto) {
         User user = userService.findUserByUserName(userRegisterDto.getUsername());
         if (user != null) {
-            throw new ValidationException("username already existed");
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "username already existed");
         }
         userRegisterService.register(userRegisterDto);
         return new ResponseEntity<>(HttpStatus.OK);

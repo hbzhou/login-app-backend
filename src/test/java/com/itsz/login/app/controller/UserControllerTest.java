@@ -1,6 +1,6 @@
 package com.itsz.login.app.controller;
 
-import com.itsz.login.app.service.UserRegisterService;
+import com.itsz.login.app.service.UserService;
 import org.hamcrest.core.Is;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,13 +15,13 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 @WebMvcTest
 @AutoConfigureMockMvc
-class UserRegisterControllerTest {
+class UserControllerTest {
 
     @MockBean
-    private UserRegisterService userRegisterService;
+    private UserService userService;
 
     @Autowired
-    private UserRegisterController userRegisterController;
+    private UserController userController;
 
     @Autowired
     private MockMvc mockMvc;

@@ -23,10 +23,17 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: update
+    open-in-view: false
 
 
 server:
   port: 8099
   error:
     include-message: always
+
+
+
+
+
+
 
